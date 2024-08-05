@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const dvdLogo = document.getElementById("dvd-logo");
-    let x = 0; // Start position away from the edges
-    let y = 0; // Start position away from the edges
-    let xSpeed = 2;
-    let ySpeed = 2;
+    const cornerHitSound = document.getElementById("corner-hit-sound");
+
+    // Set initial position at a random place on the screen
+    let x = Math.random() * (window.innerWidth - dvdLogo.offsetWidth);
+    let y = Math.random() * (window.innerHeight - dvdLogo.offsetHeight);
+
+    // Set speed values
+    let xSpeed = 5;
+    let ySpeed = 5;
 
     function updatePosition() {
         const logoRect = dvdLogo.getBoundingClientRect();
@@ -13,17 +18,34 @@ document.addEventListener("DOMContentLoaded", function () {
         y += ySpeed;
 
         // Check boundaries and reverse direction if needed
-        if (x + logoRect.width >= bodyRect.width || x <= 0) {
-            xSpeed *= -1;
-            x += xSpeed; // Move back into bounds
+        let hitCorner = false;
+        if (x + logoRect.width >= bodyRect.width) {
+            xSpeed = -Math.abs(xSpeed); // Ensure it moves left
+            x = bodyRect.width - logoRect.width;
+        } else if (x <= 0) {
+            xSpeed = Math.abs(xSpeed); // Ensure it moves right
+            x = 0;
         }
 
-        if (y + logoRect.height >= bodyRect.height || y <= 0) {
-            ySpeed *= -1;
-            y += ySpeed; // Move back into bounds
+        if (y + logoRect.height >= bodyRect.height) {
+            ySpeed = -Math.abs(ySpeed); // Ensure it moves up
+            y = bodyRect.height - logoRect.height;
+        } else if (y <= 0) {
+            ySpeed = Math.abs(ySpeed); // Ensure it moves down
+            y = 0;
         }
 
-        dvdLogo.style.transform = `translate(${x}px, ${y}px)`;
+        if ((x <= 0 || x + logoRect.width >= bodyRect.width) && (y <= 0 || y + logoRect.height >= bodyRect.height)) {
+            hitCorner = true;
+        }
+
+        if (hitCorner) {
+            cornerHitSound.currentTime = 0; // Rewind to the start
+            cornerHitSound.play();
+        }
+
+        dvdLogo.style.left = `${x}px`;
+        dvdLogo.style.top = `${y}px`;
         requestAnimationFrame(updatePosition);
     }
 
