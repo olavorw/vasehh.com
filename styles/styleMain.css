@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #262626;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: #111111;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.social-media a:hover {
+    background-color: #0056b3;
+}
+
+.dvd-logo {
+    position: absolute;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    background-image: url('vasehhDVD.png'); /* Set the path to your logo */
+    background-size: cover;
+    left: 0;
+    top: 0;
+
+} #vasehhDVD {
+    position: absolute;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    background-image: url('vasehhDVD.png'); /* Set the path to your logo */
+    background-size: cover;
+    left: 0;
+    top: 0;
+}
+#jakeDVD {
+    position: absolute;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    background-image: url('https://cdn.discordapp.com/avatars/134331351397564416/119d551b3b83d4b047af5c51fc80d97e.webp?size=80'); /* Set the path to your logo */
+    background-size: cover;
+    left: 0;
+    top: 0;
+}
+#jronesDVD {
+    position: absolute;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    background-image: url('https://cdn.discordapp.com/avatars/395567518124736512/06804f2203c5c5cb6adab9f4e3f37063.webp?size=80'); /* Set the path to your logo */
+    background-size: cover;
+    left: 0;
+    top: 0;
+} #sandyDVD {
+    position: absolute;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    background-image: url('sandyDVD.png'); /* Set the path to your logo */
+    background-size: cover;
+    left: 0;
+    top: 0;
+}
