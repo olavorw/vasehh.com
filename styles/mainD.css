@@ -8,6 +8,7 @@ body {
     background-color: #262626;
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: white;
+    overflow: hidden;
 }
 
 .container {
@@ -43,4 +44,14 @@ p {
 
 .social-media a:hover {
     background-color: #0056b3;
+}
+
+#dvd-logo {
+    position: absolute;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    background-image: url('dvd_vasehh.png'); /* Set the path to your logo */
+    background-size: cover;
+    left: 0;
+    top: 0;
 }
